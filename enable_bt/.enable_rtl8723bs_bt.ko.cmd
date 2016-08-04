@@ -1,1 +1,0 @@
-cmd_/home/k/Desktop/enable_bt/enable_rtl8723bs_bt.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/k/Desktop/enable_bt/enable_rtl8723bs_bt.ko /home/k/Desktop/enable_bt/enable_rtl8723bs_bt.o /home/k/Desktop/enable_bt/enable_rtl8723bs_bt.mod.o

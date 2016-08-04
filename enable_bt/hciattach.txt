@@ -1,0 +1,575 @@
+Realtek Bluetooth init uart with init speed:115200, final_speed:115200, type:HCI UART H5
+Realtek Bluetooth :Realtek hciattach version 3.1 
+
+Realtek Bluetooth :3-wire sync pattern resend : 1, len: 8
+
+Realtek Bluetooth :Get SYNC Resp Pkt
+
+Realtek Bluetooth :Get SYNC pkt-active mode
+
+Realtek Bluetooth :3-wire config pattern resend : 1 , len: 10
+Realtek Bluetooth :Get CONFG pkt-active mode
+
+Realtek Bluetooth :Get CONFG resp pkt-active mode
+
+Realtek Bluetooth :H5 init finished
+
+Realtek Bluetooth :RTK send HCI_VENDOR_READ_RTK_ROM_VERISION_Command
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :receive hci command complete event with command:1001
+
+Realtek Bluetooth :Read RTK LMP version with Status:0
+Realtek Bluetooth :HCI Version 0x06, HCI Revision 0x000b, LMP Subversion 0x8723
+Realtek Bluetooth :RTK send HCI_VENDOR_READ_RTK_ROM_VERISION_Command
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :receive hci command complete event with command:fc6d
+
+Realtek Bluetooth :Read RTK rom version with Status:0
+Realtek Bluetooth :LMP subversion 0x8723
+Realtek Bluetooth :rtk_hw_cfg.eversion = 1
+Realtek Bluetooth :IC: RTL8723BS
+
+Realtek Bluetooth :Firmware/config: rtl8723b_fw, rtl8723b_config
+
+Realtek Bluetooth :config offset(00f4),length(08)
+Realtek Bluetooth :config baud rate to :4928002, hwflowcontrol:5f, 1
+Realtek Bluetooth :config offset(0027),length(01)
+Realtek Bluetooth :config offset(00fe),length(01)
+Realtek Bluetooth :config offset(015b),length(04)
+Realtek Bluetooth :config offset(01e3),length(01)
+Realtek Bluetooth :Get config baud rate from config file:4928002
+Realtek Bluetooth :Load FW OK
+Realtek Bluetooth :rtk_get_fw_project_id: opcode 0, len 1, data 1
+Realtek Bluetooth :fw_ver 0x1e4e2b06, patch_num 2
+Realtek Bluetooth :patch length is 0x5f14
+Realtek Bluetooth :start offset is 0x5680
+Realtek Bluetooth :Svn version:    16600
+
+Realtek Bluetooth :Coexistence: BTCOEX_20151223-654a
+
+Realtek Bluetooth :fw: exists, config file: exists
+Realtek Bluetooth :baudrate in change speed command: 0x2 0x80 0x92 0x4 
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :receive hci command complete event with command:fc17
+
+Realtek Bluetooth :Change BD Rate with status:0
+Realtek Bluetooth :final_speed 1500000
+
+Realtek Bluetooth :hw flow control enable
+Realtek Bluetooth :iEndIndex:96  iLastPacketLen:203 iAdditionpkt:4
+
+Realtek Bluetooth :hci_download_patch tx_index:0 rx_index: -1
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 0
+
+Realtek Bluetooth :hci_download_patch tx_index:1 rx_index: 0
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 1
+
+Realtek Bluetooth :hci_download_patch tx_index:2 rx_index: 1
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 2
+
+Realtek Bluetooth :hci_download_patch tx_index:3 rx_index: 2
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 3
+
+Realtek Bluetooth :hci_download_patch tx_index:4 rx_index: 3
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 4
+
+Realtek Bluetooth :hci_download_patch tx_index:5 rx_index: 4
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 5
+
+Realtek Bluetooth :hci_download_patch tx_index:6 rx_index: 5
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 6
+
+Realtek Bluetooth :hci_download_patch tx_index:7 rx_index: 6
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 7
+
+Realtek Bluetooth :hci_download_patch tx_index:8 rx_index: 7
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 8
+
+Realtek Bluetooth :hci_download_patch tx_index:9 rx_index: 8
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 9
+
+Realtek Bluetooth :hci_download_patch tx_index:10 rx_index: 9
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 10
+
+Realtek Bluetooth :hci_download_patch tx_index:11 rx_index: 10
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 11
+
+Realtek Bluetooth :hci_download_patch tx_index:12 rx_index: 11
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 12
+
+Realtek Bluetooth :hci_download_patch tx_index:13 rx_index: 12
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 13
+
+Realtek Bluetooth :hci_download_patch tx_index:14 rx_index: 13
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 14
+
+Realtek Bluetooth :hci_download_patch tx_index:15 rx_index: 14
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 15
+
+Realtek Bluetooth :hci_download_patch tx_index:16 rx_index: 15
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 16
+
+Realtek Bluetooth :hci_download_patch tx_index:17 rx_index: 16
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 17
+
+Realtek Bluetooth :hci_download_patch tx_index:18 rx_index: 17
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 18
+
+Realtek Bluetooth :hci_download_patch tx_index:19 rx_index: 18
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 19
+
+Realtek Bluetooth :hci_download_patch tx_index:20 rx_index: 19
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 20
+
+Realtek Bluetooth :hci_download_patch tx_index:21 rx_index: 20
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 21
+
+Realtek Bluetooth :hci_download_patch tx_index:22 rx_index: 21
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 22
+
+Realtek Bluetooth :hci_download_patch tx_index:23 rx_index: 22
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 23
+
+Realtek Bluetooth :hci_download_patch tx_index:24 rx_index: 23
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 24
+
+Realtek Bluetooth :hci_download_patch tx_index:25 rx_index: 24
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 25
+
+Realtek Bluetooth :hci_download_patch tx_index:26 rx_index: 25
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 26
+
+Realtek Bluetooth :hci_download_patch tx_index:27 rx_index: 26
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 27
+
+Realtek Bluetooth :hci_download_patch tx_index:28 rx_index: 27
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 28
+
+Realtek Bluetooth :hci_download_patch tx_index:29 rx_index: 28
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 29
+
+Realtek Bluetooth :hci_download_patch tx_index:30 rx_index: 29
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 30
+
+Realtek Bluetooth :hci_download_patch tx_index:31 rx_index: 30
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 31
+
+Realtek Bluetooth :hci_download_patch tx_index:32 rx_index: 31
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 32
+
+Realtek Bluetooth :hci_download_patch tx_index:33 rx_index: 32
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 33
+
+Realtek Bluetooth :hci_download_patch tx_index:34 rx_index: 33
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 34
+
+Realtek Bluetooth :hci_download_patch tx_index:35 rx_index: 34
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 35
+
+Realtek Bluetooth :hci_download_patch tx_index:36 rx_index: 35
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 36
+
+Realtek Bluetooth :hci_download_patch tx_index:37 rx_index: 36
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 37
+
+Realtek Bluetooth :hci_download_patch tx_index:38 rx_index: 37
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 38
+
+Realtek Bluetooth :hci_download_patch tx_index:39 rx_index: 38
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 39
+
+Realtek Bluetooth :hci_download_patch tx_index:40 rx_index: 39
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 40
+
+Realtek Bluetooth :hci_download_patch tx_index:41 rx_index: 40
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 41
+
+Realtek Bluetooth :hci_download_patch tx_index:42 rx_index: 41
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 42
+
+Realtek Bluetooth :hci_download_patch tx_index:43 rx_index: 42
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 43
+
+Realtek Bluetooth :hci_download_patch tx_index:44 rx_index: 43
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 44
+
+Realtek Bluetooth :hci_download_patch tx_index:45 rx_index: 44
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 45
+
+Realtek Bluetooth :hci_download_patch tx_index:46 rx_index: 45
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 46
+
+Realtek Bluetooth :hci_download_patch tx_index:47 rx_index: 46
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 47
+
+Realtek Bluetooth :hci_download_patch tx_index:48 rx_index: 47
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 48
+
+Realtek Bluetooth :hci_download_patch tx_index:49 rx_index: 48
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 49
+
+Realtek Bluetooth :hci_download_patch tx_index:50 rx_index: 49
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 50
+
+Realtek Bluetooth :hci_download_patch tx_index:51 rx_index: 50
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 51
+
+Realtek Bluetooth :hci_download_patch tx_index:52 rx_index: 51
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 52
+
+Realtek Bluetooth :hci_download_patch tx_index:53 rx_index: 52
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 53
+
+Realtek Bluetooth :hci_download_patch tx_index:54 rx_index: 53
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 54
+
+Realtek Bluetooth :hci_download_patch tx_index:55 rx_index: 54
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 55
+
+Realtek Bluetooth :hci_download_patch tx_index:56 rx_index: 55
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 56
+
+Realtek Bluetooth :hci_download_patch tx_index:57 rx_index: 56
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 57
+
+Realtek Bluetooth :hci_download_patch tx_index:58 rx_index: 57
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 58
+
+Realtek Bluetooth :hci_download_patch tx_index:59 rx_index: 58
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 59
+
+Realtek Bluetooth :hci_download_patch tx_index:60 rx_index: 59
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 60
+
+Realtek Bluetooth :hci_download_patch tx_index:61 rx_index: 60
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 61
+
+Realtek Bluetooth :hci_download_patch tx_index:62 rx_index: 61
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 62
+
+Realtek Bluetooth :hci_download_patch tx_index:63 rx_index: 62
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 63
+
+Realtek Bluetooth :hci_download_patch tx_index:64 rx_index: 63
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 64
+
+Realtek Bluetooth :hci_download_patch tx_index:65 rx_index: 64
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 65
+
+Realtek Bluetooth :hci_download_patch tx_index:66 rx_index: 65
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 66
+
+Realtek Bluetooth :hci_download_patch tx_index:67 rx_index: 66
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 67
+
+Realtek Bluetooth :hci_download_patch tx_index:68 rx_index: 67
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 68
+
+Realtek Bluetooth :hci_download_patch tx_index:69 rx_index: 68
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 69
+
+Realtek Bluetooth :hci_download_patch tx_index:70 rx_index: 69
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 70
+
+Realtek Bluetooth :hci_download_patch tx_index:71 rx_index: 70
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 71
+
+Realtek Bluetooth :hci_download_patch tx_index:72 rx_index: 71
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 72
+
+Realtek Bluetooth :hci_download_patch tx_index:73 rx_index: 72
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 73
+
+Realtek Bluetooth :hci_download_patch tx_index:74 rx_index: 73
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 74
+
+Realtek Bluetooth :hci_download_patch tx_index:75 rx_index: 74
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 75
+
+Realtek Bluetooth :hci_download_patch tx_index:76 rx_index: 75
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 76
+
+Realtek Bluetooth :hci_download_patch tx_index:77 rx_index: 76
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 77
+
+Realtek Bluetooth :hci_download_patch tx_index:78 rx_index: 77
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 78
+
+Realtek Bluetooth :hci_download_patch tx_index:79 rx_index: 78
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 79
+
+Realtek Bluetooth :hci_download_patch tx_index:80 rx_index: 79
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 80
+
+Realtek Bluetooth :hci_download_patch tx_index:81 rx_index: 80
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 81
+
+Realtek Bluetooth :hci_download_patch tx_index:82 rx_index: 81
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 82
+
+Realtek Bluetooth :hci_download_patch tx_index:83 rx_index: 82
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 83
+
+Realtek Bluetooth :hci_download_patch tx_index:84 rx_index: 83
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 84
+
+Realtek Bluetooth :hci_download_patch tx_index:85 rx_index: 84
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 85
+
+Realtek Bluetooth :hci_download_patch tx_index:86 rx_index: 85
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 86
+
+Realtek Bluetooth :hci_download_patch tx_index:87 rx_index: 86
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 87
+
+Realtek Bluetooth :hci_download_patch tx_index:88 rx_index: 87
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 88
+
+Realtek Bluetooth :hci_download_patch tx_index:89 rx_index: 88
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 89
+
+Realtek Bluetooth :hci_download_patch tx_index:90 rx_index: 89
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 90
+
+Realtek Bluetooth :hci_download_patch tx_index:91 rx_index: 90
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 91
+
+Realtek Bluetooth :hci_download_patch tx_index:92 rx_index: 91
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 92
+
+Realtek Bluetooth :hci_download_patch tx_index:93 rx_index: 92
+
+Realtek Bluetooth :Received reliable seqno 0 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 93
+
+Realtek Bluetooth :hci_download_patch tx_index:94 rx_index: 93
+
+Realtek Bluetooth :Received reliable seqno 1 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 94
+
+Realtek Bluetooth :hci_download_patch tx_index:95 rx_index: 94
+
+Realtek Bluetooth :Received reliable seqno 2 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 95
+
+Realtek Bluetooth :hci_download_patch tx_index:96 rx_index: 95
+
+Realtek Bluetooth :Received reliable seqno 3 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 96
+
+Realtek Bluetooth :Send additional packet 97
+Realtek Bluetooth :hci_download_patch tx_index:97 rx_index: 96
+
+Realtek Bluetooth :Received reliable seqno 4 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 97
+
+Realtek Bluetooth :Send additional packet 98
+Realtek Bluetooth :hci_download_patch tx_index:98 rx_index: 97
+
+Realtek Bluetooth :Received reliable seqno 5 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 98
+
+Realtek Bluetooth :Send additional packet 99
+Realtek Bluetooth :hci_download_patch tx_index:99 rx_index: 98
+
+Realtek Bluetooth :Received reliable seqno 6 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 99
+
+Realtek Bluetooth :Send end packet 228
+Realtek Bluetooth :Send FW last command
+Realtek Bluetooth :hci_download_patch tx_index:100 rx_index: 99
+
+Realtek Bluetooth :Received reliable seqno 7 from card
+Realtek Bluetooth :rtk_hw_cfg.rx_index 100
+
+Realtek Bluetooth :Init Process finished
+Realtek Bluetooth post process

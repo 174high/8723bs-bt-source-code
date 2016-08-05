@@ -1327,6 +1327,7 @@ int main(int argc, char *argv[])
 				int m_id, p_id;
 				sscanf(argv[optind], "%x,%x", &m_id, &p_id);
 				u = get_by_id(m_id, p_id);
+
 			} else {
 				u = get_by_type(opt);
 			}
@@ -1382,7 +1383,7 @@ int main(int argc, char *argv[])
 	bcsp_max_retries = to;
 
 	fprintf(stderr, "--shinq--start init uart.\n");
-
+	printk("--shinq-u->type=%s\n",u->type);
 	n = init_uart(dev, u, send_break, raw);
 	if (n < 0) {
 		perror("Can't initialize device"); 

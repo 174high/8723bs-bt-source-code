@@ -1383,7 +1383,7 @@ int main(int argc, char *argv[])
 	bcsp_max_retries = to;
 
 	fprintf(stderr, "--shinq--start init uart.\n");
-	printk("--shinq-u->type=%s\n",u->type);
+	fprintk(stderr, "--shinq-u->type=%s\n",u->type);
 	n = init_uart(dev, u, send_break, raw);
 	if (n < 0) {
 		perror("Can't initialize device"); 

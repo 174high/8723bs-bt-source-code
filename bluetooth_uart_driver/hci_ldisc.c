@@ -301,6 +301,8 @@ int hci_uart_send_frame(struct hci_dev *hdev, struct sk_buff *skb)
 #endif
 	struct hci_uart *hu;
 
+    printk("-shinq-hci_uart_send_frame-\n");
+	printk("-shinq-socket-\n");
 	if (!hdev) {
 		BT_ERR("Frame for unknown device (hdev=NULL)");
 		return -ENODEV;
@@ -324,6 +326,8 @@ int hci_uart_send_frame(struct hci_dev *hdev, struct sk_buff *skb)
 	hu->proto->enqueue(hu, skb);
 
 	hci_uart_tx_wakeup(hu);
+	
+    printk("-shinq-hci_uart_send_frame-END\n");
 
 	return 0;
 }
@@ -355,6 +359,7 @@ static int hci_uart_tty_open(struct tty_struct *tty)
 
 	BT_DBG("tty %p", tty);
 
+	printk("-shinq-hci_uart_tty_open-\n");
 	/* FIXME: This btw is bogus, nothing requires the old ldisc to clear
 	   the pointer */
 	if (hu)
@@ -388,7 +393,7 @@ static int hci_uart_tty_open(struct tty_struct *tty)
 	if (tty->ldisc->ops->flush_buffer)
 		tty->ldisc->ops->flush_buffer(tty);
 	tty_driver_flush_buffer(tty);
-
+	printk("-shinq-hci_uart_tty_open-END\n");
 	return 0;
 }
 

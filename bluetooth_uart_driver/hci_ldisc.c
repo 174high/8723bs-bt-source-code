@@ -182,7 +182,7 @@ static void hci_uart_write_work(struct work_struct *work)
 	struct tty_struct *tty = hu->tty;
 	struct hci_dev *hdev = hu->hdev;
 	struct sk_buff *skb;
-
+    printk("-shinq-hci_uart_write_work\n");
 	/* REVISIT: should we cope with bad skbs or ->write() returning
 	 * and error value ?
 	 */
@@ -192,12 +192,15 @@ static void hci_uart_write_work(struct work_struct *work)
 
 	while ((skb = hci_uart_dequeue(hu))) {
 		int len;
-
+		
+	    printk("1-shinq-skb->len=%d-\n");
 		set_bit(TTY_DO_WRITE_WAKEUP, &tty->flags);
 		len = tty->ops->write(tty, skb->data, skb->len);
 		hdev->stat.byte_tx += len;
-
+ 	    printk("2-shinq-len=%d-\n");       
+	    printk("2-shinq-skb->len=%d-\n");
 		skb_pull(skb, len);
+		printk("3-shinq-skb->len=%d-\n");
 		if (skb->len) {
 			hu->tx_skb = skb;
 			break;
@@ -211,7 +214,10 @@ static void hci_uart_write_work(struct work_struct *work)
 		goto restart;
 
 	clear_bit(HCI_UART_SENDING, &hu->tx_state);
+
+	printk("-shinq-hci_uart_write_work-END\n");
 	return;
+	
 }
 #endif
 
@@ -430,8 +436,9 @@ static void hci_uart_tty_wakeup(struct tty_struct *tty)
 {
 	struct hci_uart *hu = (void *)tty->disc_data;
 
+    printk("-shinq-hci_uart_tty_wakeup-\n");
 	BT_DBG("");
-
+    
 	if (!hu)
 		return;
 
@@ -442,6 +449,7 @@ static void hci_uart_tty_wakeup(struct tty_struct *tty)
 
 	if (test_bit(HCI_UART_PROTO_SET, &hu->flags))
 		hci_uart_tx_wakeup(hu);
+	printk("-shinq-hci_uart_tty_wakeup--END\n");
 }
 
 /* hci_uart_tty_receive()
@@ -461,6 +469,7 @@ static void hci_uart_tty_receive(struct tty_struct *tty, const u8 * data,
 {
 	struct hci_uart *hu = (void *)tty->disc_data;
 
+    printk("-shinq-hci_uart_tty_receive\n");
 	if (!hu || tty != hu->tty)
 		return;
 
@@ -473,6 +482,7 @@ static void hci_uart_tty_receive(struct tty_struct *tty, const u8 * data,
 	spin_unlock(&hu->rx_lock);
 
 	tty_unthrottle(tty);
+	printk("-shinq-hci_uart_tty_receive-END\n")
 }
 
 static int hci_uart_register_dev(struct hci_uart *hu)

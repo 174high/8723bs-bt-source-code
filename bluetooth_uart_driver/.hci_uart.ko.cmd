@@ -1,1 +1,0 @@
-cmd_/home/k/Desktop/Xerus_release/wifi_bt/src/bluetooth_uart_driver/hci_uart.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/k/Desktop/Xerus_release/wifi_bt/src/bluetooth_uart_driver/hci_uart.ko /home/k/Desktop/Xerus_release/wifi_bt/src/bluetooth_uart_driver/hci_uart.o /home/k/Desktop/Xerus_release/wifi_bt/src/bluetooth_uart_driver/hci_uart.mod.o

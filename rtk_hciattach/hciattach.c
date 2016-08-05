@@ -96,7 +96,9 @@ static void sig_alarm(int sig)
 }
 
 static int uart_speed(int s)
-{
+{	
+	fprintf(stderr, "--shinq--uart_speed.\n");
+	fprintf(stderr, "--shinq--uart_speed=%d.\n",speed);
 	switch (s) {
 	case 9600:
 		return B9600;
@@ -144,6 +146,7 @@ static int uart_speed(int s)
 #endif
 	default:
 		return B57600;
+    fprintf(stderr, "--shinq--uart_speed-END.\n");
 	}
 }
 

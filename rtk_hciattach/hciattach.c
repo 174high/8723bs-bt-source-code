@@ -1207,27 +1207,32 @@ static int init_uart(char *dev, struct uart_t *u, int send_break, int raw)
 		perror("Can't set baud rate");
 		return -1;
 	}
-
+ 
+        /*start to connect to the N_HCI line discipline after here*/ 
 	/* Set TTY to N_HCI line discipline */
 	i = N_HCI;
 	if (ioctl(fd, TIOCSETD, &i) < 0) {
 		perror("Can't set line discipline");
 		return -1;
 	}
-
+        
+        /*hci_uart_tty_open here after run the program up*/
 	if (flags && ioctl(fd, HCIUARTSETFLAGS, flags) < 0) {
 		perror("Can't set UART flags");
 		return -1;
 	}
-
+       
+         
+        /*nothing happened after run the program up*/
 	if (ioctl(fd, HCIUARTSETPROTO, u->proto) < 0) {
 		perror("Can't set device");
 		return -1;
 	}
-
+        
+        /*run the start up but stop half the way*/
 	if (u->post && u->post(fd, u, &ti) < 0)
 		return -1;
-
+        /*after run the program up ,can work*/
 	return fd;
 }
 

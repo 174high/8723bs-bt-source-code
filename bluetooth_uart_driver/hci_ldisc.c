@@ -193,14 +193,14 @@ static void hci_uart_write_work(struct work_struct *work)
 	while ((skb = hci_uart_dequeue(hu))) {
 		int len;
 		
-	    printk("1-shinq-skb->len=%d-\n");
+	    printk("1-shinq-skb->len=%d-\n",skb->len);
 		set_bit(TTY_DO_WRITE_WAKEUP, &tty->flags);
 		len = tty->ops->write(tty, skb->data, skb->len);
 		hdev->stat.byte_tx += len;
- 	    printk("2-shinq-len=%d-\n");       
-	    printk("2-shinq-skb->len=%d-\n");
+ 	    printk("2-shinq-len=%d-\n",len);       
+	    printk("2-shinq-skb->len=%d-\n",skb->len);
 		skb_pull(skb, len);
-		printk("3-shinq-skb->len=%d-\n");
+		printk("3-shinq-skb->len=%d-\n",skb->len);
 		if (skb->len) {
 			hu->tx_skb = skb;
 			break;
@@ -482,7 +482,7 @@ static void hci_uart_tty_receive(struct tty_struct *tty, const u8 * data,
 	spin_unlock(&hu->rx_lock);
 
 	tty_unthrottle(tty);
-	printk("-shinq-hci_uart_tty_receive-END\n")
+	printk("-shinq-hci_uart_tty_receive-END\n");
 }
 
 static int hci_uart_register_dev(struct hci_uart *hu)

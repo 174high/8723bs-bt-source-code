@@ -141,7 +141,7 @@ int hci_uart_tx_wakeup(struct hci_uart *hu)
 		return 0;
 	}
 
-	BT_DBG("");
+	printk("");
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(3, 14, 0)
 	schedule_work(&hu->write_work);
@@ -225,7 +225,7 @@ static void hci_uart_write_work(struct work_struct *work)
 /* Initialize device */
 static int hci_uart_open(struct hci_dev *hdev)
 {
-	BT_DBG("%s %p", hdev->name, hdev);
+	printk("%s %p", hdev->name, hdev);
 
 	/* Nothing to do for UART driver */
 
@@ -244,7 +244,7 @@ static int hci_uart_flush(struct hci_dev *hdev)
 	struct hci_uart *hu = GET_DRV_DATA(hdev);	//(struct hci_uart *) hdev->driver_data;
 	struct tty_struct *tty = hu->tty;
 
-	BT_DBG("hdev %p tty %p", hdev, tty);
+	printk("hdev %p tty %p", hdev, tty);
 
 	if (hu->tx_skb) {
 		kfree_skb(hu->tx_skb);
@@ -264,7 +264,7 @@ static int hci_uart_flush(struct hci_dev *hdev)
 /* Close device */
 static int hci_uart_close(struct hci_dev *hdev)
 {
-	BT_DBG("hdev %p", hdev);
+	printk("hdev %p", hdev);
 
 
 	/* When in kernel 4.4.0 and greater, the HCI_RUNNING bit is
@@ -274,7 +274,7 @@ static int hci_uart_close(struct hci_dev *hdev)
 		return 0;
 #else
 	if (test_bit(HCI_RUNNING, &hdev->flags)) {
-		BT_ERR("HCI_RUNNING is not cleared before.");
+		printk("HCI_RUNNING is not cleared before.");
 		return -1;
 	}
 #endif
@@ -304,7 +304,7 @@ int hci_uart_send_frame(struct hci_dev *hdev, struct sk_buff *skb)
     printk("-shinq-hci_uart_send_frame-\n");
 	printk("-shinq-socket-\n");
 	if (!hdev) {
-		BT_ERR("Frame for unknown device (hdev=NULL)");
+		printk("Frame for unknown device (hdev=NULL)");
 		return -ENODEV;
 	}
 
@@ -313,7 +313,7 @@ int hci_uart_send_frame(struct hci_dev *hdev, struct sk_buff *skb)
 
 	hu = GET_DRV_DATA(hdev);	//(struct hci_uart *) hdev->driver_data;
 
-	BT_DBG("%s: type %d len %d", hdev->name, bt_cb(skb)->pkt_type,
+	printk("%s: type %d len %d", hdev->name, bt_cb(skb)->pkt_type,
 	       skb->len);
 
 #ifdef BTCOEX
@@ -338,7 +338,7 @@ static void hci_uart_destruct(struct hci_dev *hdev)
 	if (!hdev)
 		return;
 
-	BT_DBG("%s", hdev->name);
+	printk("%s", hdev->name);
 	kfree(hdev->driver_data);
 }
 #endif
@@ -357,7 +357,7 @@ static int hci_uart_tty_open(struct tty_struct *tty)
 {
 	struct hci_uart *hu = (void *)tty->disc_data;
 
-	BT_DBG("tty %p", tty);
+	printk("tty %p", tty);
 
 	printk("-shinq-hci_uart_tty_open-\n");
 	/* FIXME: This btw is bogus, nothing requires the old ldisc to clear
@@ -371,7 +371,7 @@ static int hci_uart_tty_open(struct tty_struct *tty)
 		return -EOPNOTSUPP;
 
 	if (!(hu = kzalloc(sizeof(struct hci_uart), GFP_KERNEL))) {
-		BT_ERR("Can't allocate control structure");
+		printk("Can't allocate control structure");
 		return -ENFILE;
 	}
 
@@ -406,7 +406,7 @@ static void hci_uart_tty_close(struct tty_struct *tty)
 {
 	struct hci_uart *hu = (void *)tty->disc_data;
 
-	BT_DBG("tty %p", tty);
+	printk("tty %p", tty);
 
 	/* Detach from the tty */
 	tty->disc_data = NULL;
@@ -442,7 +442,7 @@ static void hci_uart_tty_wakeup(struct tty_struct *tty)
 	struct hci_uart *hu = (void *)tty->disc_data;
 
     printk("-shinq-hci_uart_tty_wakeup-\n");
-	BT_DBG("");
+	printk("");
     
 	if (!hu)
 		return;
@@ -499,7 +499,7 @@ static int hci_uart_register_dev(struct hci_uart *hu)
 	/* Initialize and register HCI device */
 	hdev = hci_alloc_dev();
 	if (!hdev) {
-		BT_ERR("Can't allocate HCI device");
+		printk("Can't allocate HCI device");
 		return -ENOMEM;
 	}
 
@@ -553,7 +553,7 @@ static int hci_uart_register_dev(struct hci_uart *hu)
 #endif
 
 	if (hci_register_dev(hdev) < 0) {
-		BT_ERR("Can't register HCI device");
+		printk("Can't register HCI device");
 		hci_free_dev(hdev);
 		return -ENODEV;
 	}
@@ -608,7 +608,7 @@ static int hci_uart_tty_ioctl(struct tty_struct *tty, struct file *file,
 	struct hci_uart *hu = (void *)tty->disc_data;
 	int err = 0;
 
-	BT_DBG("");
+	printk("");
 
 	/* Verify the status of the device */
 	if (!hu)
@@ -697,7 +697,7 @@ static int __init hci_uart_init(void)
 	hci_uart_ldisc.owner = THIS_MODULE;
 
 	if ((err = tty_register_ldisc(N_HCI, &hci_uart_ldisc))) {
-		BT_ERR("HCI line discipline registration failed. (%d)", err);
+		printk("HCI line discipline registration failed. (%d)", err);
 		return err;
 	}
 #ifdef CONFIG_BT_HCIUART_H4
@@ -754,7 +754,7 @@ static void __exit hci_uart_exit(void)
 
 	/* Release tty registration of line discipline */
 	if ((err = tty_unregister_ldisc(N_HCI)))
-		BT_ERR("Can't unregister HCI line discipline (%d)", err);
+		printk("Can't unregister HCI line discipline (%d)", err);
 
 #ifdef BTCOEX
 	rtk_btcoex_exit();

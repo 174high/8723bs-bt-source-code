@@ -2986,8 +2986,9 @@ int rtk_init(int fd, int proto, int speed, struct termios *ti)
 int rtk_post(int fd, int proto, struct termios *ti)
 {
 	fprintf(stderr, "--shinq--rtk_post.\n");
+	fprintf(stderr, "--shinq--rtk_hw_cfg.final_speed=%d.\n",rtk_hw_cfg.final_speed);
 	if (rtk_hw_cfg.final_speed)
 		return set_speed(fd, ti, rtk_hw_cfg.final_speed);
-
+	fprintf(stderr, "--shinq--rtk_post END.\n");
 	return 0;
 }

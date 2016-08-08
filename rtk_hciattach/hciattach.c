@@ -152,6 +152,7 @@ static int uart_speed(int s)
 
 int set_speed(int fd, struct termios *ti, int speed)
 {
+    
 	if (cfsetospeed(ti, uart_speed(speed)) < 0)
 		return -errno;
 
@@ -160,6 +161,8 @@ int set_speed(int fd, struct termios *ti, int speed)
 
 	if (tcsetattr(fd, TCSANOW, ti) < 0)
 		return -errno;
+	
+	fprintf(stderr, "--shinq--set_speed SUCCESS END.\n");
 
 	return 0;
 }

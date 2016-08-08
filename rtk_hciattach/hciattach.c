@@ -98,7 +98,7 @@ static void sig_alarm(int sig)
 static int uart_speed(int s)
 {	
 	fprintf(stderr, "--shinq--uart_speed.\n");
-	fprintf(stderr, "--shinq--uart_speed=%d.\n",speed);
+	fprintf(stderr, "--shinq--uart_speed=%d.\n",s);
 	switch (s) {
 	case 9600:
 		return B9600;
@@ -1383,7 +1383,7 @@ int main(int argc, char *argv[])
 	bcsp_max_retries = to;
 
 	fprintf(stderr, "--shinq--start init uart.\n");
-	fprintk(stderr, "--shinq-u->type=%s\n",u->type);
+	fprintf(stderr, "--shinq-u->type=%s\n",u->type);
 	n = init_uart(dev, u, send_break, raw);
 	if (n < 0) {
 		perror("Can't initialize device"); 

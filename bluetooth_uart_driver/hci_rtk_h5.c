@@ -231,7 +231,7 @@ static struct sk_buff *h5_prepare_pkt(struct h5_struct *h5, u8 * data,
 		rel = 0;	/* unreliable channel */
 		break;
 	default:
-		printk("Unknown packet type");
+		printk("Unknown packet type\n");
 		return NULL;
 	}
 
@@ -250,11 +250,11 @@ static struct sk_buff *h5_prepare_pkt(struct h5_struct *h5, u8 * data,
 
 	hdr[0] = h5->rxseq_txack << 3;
 	h5->txack_req = 0;
-	printk("We request packet no %u to card", h5->rxseq_txack);
+	printk("We request packet no %u to card\n", h5->rxseq_txack);
 
 	if (rel) {
 		hdr[0] |= 0x80 + h5->msgq_txseq;
-		printk("Sending packet with seqno %u", h5->msgq_txseq);
+		printk("Sending packet with seqno %u\n", h5->msgq_txseq);
 		h5->msgq_txseq = (h5->msgq_txseq + 1) & 0x07;
 	}
 
@@ -385,7 +385,7 @@ static void h5_pkt_cull(struct h5_struct *h5)
 	if (h5->rxack != seqno)
 		printk("Peer acked invalid packet");
 
-	printk("Removing %u pkts out of %u, up to seqno %u",
+	printk("Removing %u pkts out of %u, up to seqno %u\n",
 	       pkts_to_be_removed, skb_queue_len(&h5->unack),
 	       (seqno - 1) & 0x07);
 

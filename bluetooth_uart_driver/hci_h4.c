@@ -69,7 +69,7 @@ static int h4_open(struct hci_uart *hu)
 {
 	struct h4_struct *h4;
 
-	BT_DBG("hu %p", hu);
+	printk("hu %p", hu);
 
 	h4 = kzalloc(sizeof(*h4), GFP_ATOMIC);
 	if (!h4)
@@ -86,7 +86,7 @@ static int h4_flush(struct hci_uart *hu)
 {
 	struct h4_struct *h4 = hu->priv;
 
-	BT_DBG("hu %p", hu);
+	printk("hu %p", hu);
 
 	skb_queue_purge(&h4->txq);
 
@@ -100,7 +100,7 @@ static int h4_close(struct hci_uart *hu)
 
 	hu->priv = NULL;
 
-	BT_DBG("hu %p", hu);
+	printk("hu %p", hu);
 
 	skb_queue_purge(&h4->txq);
 
@@ -117,7 +117,7 @@ static int h4_enqueue(struct hci_uart *hu, struct sk_buff *skb)
 {
 	struct h4_struct *h4 = hu->priv;
 
-	BT_DBG("hu %p skb %p", hu, skb);
+	printk("hu %p skb %p", hu, skb);
 
 	/* Prepend skb with frame type */
 	memcpy(skb_push(skb, 1), &bt_cb(skb)->pkt_type, 1);
@@ -134,7 +134,7 @@ static inline int h4_check_data_len(struct hci_dev *hdev, struct h4_struct *h4, 
 {
 	register int room = skb_tailroom(h4->rx_skb);
 
-	BT_DBG("len %d room %d", len, room);
+	printk("len %d room %d", len, room);
 
 	if (!len) {
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 13, 0)
@@ -143,7 +143,7 @@ static inline int h4_check_data_len(struct hci_dev *hdev, struct h4_struct *h4, 
 		hci_recv_frame(hdev, h4->rx_skb);
 #endif
 	} else if (len > room) {
-		BT_ERR("Data length is too large");
+		printk("Data length is too large");
 		kfree_skb(h4->rx_skb);
 	} else {
 		h4->rx_state = H4_W4_DATA;
@@ -168,7 +168,7 @@ static int h4_recv(struct hci_uart *hu, void *data, int count)
 	struct hci_sco_hdr   *sh;
 	register int len, type, dlen;
 
-	BT_DBG("hu %p count %d rx_state %ld rx_count %ld", 
+	printk("hu %p count %d rx_state %ld rx_count %ld", 
 			hu, count, h4->rx_state, h4->rx_count);
 
 	ptr = data;
@@ -183,7 +183,7 @@ static int h4_recv(struct hci_uart *hu, void *data, int count)
 
 			switch (h4->rx_state) {
 			case H4_W4_DATA:
-				BT_DBG("Complete data");
+				printk("Complete data");
 #ifdef BTCOEX
 				if(bt_cb(h4->rx_skb)->pkt_type == HCI_EVENT_PKT)
 					rtk_btcoex_parse_event(
@@ -209,7 +209,7 @@ static int h4_recv(struct hci_uart *hu, void *data, int count)
 			case H4_W4_EVENT_HDR:
 				eh = hci_event_hdr(h4->rx_skb);
 
-				BT_DBG("Event header: evt 0x%2.2x plen %d", eh->evt, eh->plen);
+				printk("Event header: evt 0x%2.2x plen %d", eh->evt, eh->plen);
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 13, 0)
 				h4_check_data_len(h4, eh->plen);
@@ -222,7 +222,7 @@ static int h4_recv(struct hci_uart *hu, void *data, int count)
 				ah = hci_acl_hdr(h4->rx_skb);
 				dlen = __le16_to_cpu(ah->dlen);
 
-				BT_DBG("ACL header: dlen %d", dlen);
+				printk("ACL header: dlen %d", dlen);
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 13, 0)
 				h4_check_data_len(h4, dlen);
@@ -234,7 +234,7 @@ static int h4_recv(struct hci_uart *hu, void *data, int count)
 			case H4_W4_SCO_HDR:
 				sh = hci_sco_hdr(h4->rx_skb);
 
-				BT_DBG("SCO header: dlen %d", sh->dlen);
+				printk("SCO header: dlen %d", sh->dlen);
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 13, 0)
 				h4_check_data_len(h4, sh->dlen);
@@ -248,28 +248,28 @@ static int h4_recv(struct hci_uart *hu, void *data, int count)
 		/* H4_W4_PACKET_TYPE */
 		switch (*ptr) {
 		case HCI_EVENT_PKT:
-			BT_DBG("Event packet");
+			printk("Event packet");
 			h4->rx_state = H4_W4_EVENT_HDR;
 			h4->rx_count = HCI_EVENT_HDR_SIZE;
 			type = HCI_EVENT_PKT;
 			break;
 
 		case HCI_ACLDATA_PKT:
-			BT_DBG("ACL packet");
+			printk("ACL packet");
 			h4->rx_state = H4_W4_ACL_HDR;
 			h4->rx_count = HCI_ACL_HDR_SIZE;
 			type = HCI_ACLDATA_PKT;
 			break;
 
 		case HCI_SCODATA_PKT:
-			BT_DBG("SCO packet");
+			printk("SCO packet");
 			h4->rx_state = H4_W4_SCO_HDR;
 			h4->rx_count = HCI_SCO_HDR_SIZE;
 			type = HCI_SCODATA_PKT;
 			break;
 
 		default:
-			BT_ERR("Unknown HCI packet type %2.2x", (__u8)*ptr);
+			printk("Unknown HCI packet type %2.2x", (__u8)*ptr);
 			hu->hdev->stat.err_rx++;
 			ptr++; count--;
 			continue;
@@ -280,7 +280,7 @@ static int h4_recv(struct hci_uart *hu, void *data, int count)
 		/* Allocate packet */
 		h4->rx_skb = bt_skb_alloc(HCI_MAX_FRAME_SIZE, GFP_ATOMIC);
 		if (!h4->rx_skb) {
-			BT_ERR("Can't allocate mem for new packet");
+			printk("Can't allocate mem for new packet");
 			h4->rx_state = H4_W4_PACKET_TYPE;
 			h4->rx_count = 0;
 			return -ENOMEM;
@@ -316,7 +316,7 @@ int __init h4_init(void)
 	if (!err)
 		BT_INFO("HCI H4 protocol initialized");
 	else
-		BT_ERR("HCI H4 protocol registration failed");
+		printk("HCI H4 protocol registration failed");
 
 	return err;
 }
